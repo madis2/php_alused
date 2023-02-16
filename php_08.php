@@ -52,8 +52,34 @@
             if ($difference < 0) { $difference = 0; }
             echo floor($difference/60/60/24)." päeva jäänud 2022/23 kooliaasta lõpuni.";
         ?>
-    </div>
+    
+        <h3 class = "mt-4">Aastaaja pilt</h3>
 
-    <h3 class = "mt-4">Aastaaja pilt</h3>
+        <?php
+
+            $kuu = date('n'); 
+            $aeg = '';
+
+            if ($kuu >= 3 && $kuu <= 5) {
+            $aeg = 'kevad';
+            } elseif ($kuu >= 6 && $kuu <= 8) {
+            $aeg = 'suvi';
+            } elseif ($kuu >= 9 && $kuu <= 11) {
+            $aeg = 'sügis';
+            } else {
+            $aeg = 'talv';
+            }
+
+            if ($aeg == 'kevad') {
+            echo '<img src="kevad.jpg" alt="Kevad">';
+            } elseif ($aeg == 'suvi') {
+            echo '<img src="suvi.png" alt="Suvi">';
+            } elseif ($aeg == 'sügis') {
+            echo '<img src="sygis.jpg" alt="Sügis">';
+            } else {
+            echo '<img src="talv.jpg" alt="Talv">';
+            }
+        ?>
+    </div>
 </body>
 </html>
